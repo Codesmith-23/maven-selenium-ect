@@ -1,0 +1,59 @@
+# 1. Check if Docker is running
+docker info
+
+# 2. List all available Docker images on your system
+docker images
+
+# 3. Pull an image from Docker Hub (e.g., nginx)
+docker pull nginx
+
+# 4. Create and start a container from an image (e.g., nginx) in detached mode
+docker run -d --name my_nginx_container nginx
+
+# 5. List all running containers
+docker ps
+
+# 6. View all containers, including stopped ones
+docker ps -a
+
+# 7. Check logs for a specific container (e.g., nginx container)
+docker logs my_nginx_container
+
+# 8. Stop a running container
+docker stop my_nginx_container
+
+# 9. Start a stopped container
+docker start my_nginx_container
+
+# 10. Restart a container
+docker restart my_nginx_container
+
+# 11. Execute a command inside a running container (e.g., check nginx version)
+docker exec my_nginx_container nginx -v
+
+# 12. Access a container’s shell
+docker exec -it my_nginx_container /bin/bash
+
+# 13. Inspect a container’s detailed information
+docker inspect my_nginx_container
+
+# 14. List networks to view available Docker networks
+docker network ls
+
+# 15. Create a custom network
+docker network create my_custom_network
+
+# 16. Run a new container attached to the custom network
+docker run -d --name web_server --network my_custom_network nginx
+
+# 17. Remove a container (must be stopped)
+docker rm my_nginx_container
+
+# 18. Remove an image
+docker rmi nginx
+
+# 19. Clean up all stopped containers
+docker container prune
+
+# 20. Clean up all dangling images
+docker image prune
